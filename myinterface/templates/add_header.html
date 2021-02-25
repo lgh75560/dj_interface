@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="/static/css/forms.css">
+    <script src="/static/js/jquery-3.4.1.min.js"></script>
+    <style>
+        td{
+            width: 200px;
+            overflow: auto;
+            border:solid #ccc 1px;
+        }
+        table{
+            border: 1px solid #FFFFFF;
+        }
+    </style>
+</head>
+<body>
+
+<h2>header 添加</h2>
+<fieldset >
+    <form>
+        <table>
+            <tr>
+
+                <p>
+                    <input type="text" id="header_name" placeholder="输入头部名称" autocomplete="off"/>
+                </p>
+
+            </tr>
+            <tr>
+
+                <p>
+                    <textarea id="header_value" style="with:400px;height:200px;" placeholder="输入值"></textarea>
+                </p>
+
+            </tr>
+            <tr>
+                <input type="submit" value="执行添加" id="submit"/>
+            </tr>
+            <tr>
+                <p id="msg"></p>
+            </tr>
+        </table>
+    </form>
+</fieldset>
+
+
+<fieldset><legend>已添加头部数据</legend>
+    <table id="myTable">
+        <thead>
+        <tr>
+            <th>id</th>
+            <th>头部名称</th>
+            <th>值</th>
+        </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+</fieldset>
+
+</body>
+<script>
+    $(document).ready(function(){
+        // 页面加载，就查询已添加的数据
+        $.ajax({
+            url:"/get_header",
+            type:"get",
+            success: function(data){
+                suit_data= eval(data['data']);
+                tbody = $('#myTable tbody')
+                for (i in suit_data) {
+                   var tr=$('<tr></tr>');
+                   tr.append('<td>'+ suit_data[i].h_id + '</td>' + '<td>'+ suit_data[i].h_name + '</td>' + '<td>'+ suit_data[i].h_v + '</td>');
+                   tbody.append(tr);
+                }
+                $('#myTable tbody').replaceWith(tbody);
+            }
+        });
+    });
+
+    $('#submit').click(function (e) {
+        e.preventDefault();
+        var header_name = $('#header_name').val()
+        var header_value = $('#header_value').val()
+
+        var _url = '/save_header/' ;
+        $.ajax({
+            url: _url,
+            type: 'POST',
+            data: JSON.stringify({'header_name': header_name, "header_value": header_value}),
+            cache: false,
+            contentType:"application/json",
+        }).done(function (data) {
+            console.log('success,' + data);
+            $('#msg').text(data.msg)
+             //刷新页面
+            setTimeout( window.location.reload(),2000)
+
+        }).fail(function (res) {
+            $('#msg').text(res)
+        });
+    });
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/static/css/forms.css">
+    <script src="/static/js/jquery-3.4.1.min.js"></script>
+    <style>
+        td{
+            width: 200px;
+            overflow: auto;
+            border:solid #ccc 1px;
+        }
+        table{
+            border: 1px solid #FFFFFF;
+        }
+        .i {
+            width: 300px;
+        }
+        .poptr td {
+            width: 300px;
+            overflow: auto;
+            border:solid #ccc 1px;
+        }
+    </style>
+    <style>
+        .black_overlay {
+            display: none;
+            position: absolute;
+            top: 0%;
+            left: 0%;
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            z-index: 1001;
+            -moz-opacity: 0.8;
+            opacity: .80;
+            filter: alpha(opacity=80);
+        }
+
+        .white_content {
+            display: none;
+            position: absolute;
+            top: 10%;
+            left: 10%;
+            width: 80%;
+            height: 80%;
+            border: 16px solid lightblue;
+            background-color: white;
+            z-index: 1002;
+            overflow: auto;
+        }
+
+        .white_content_small {
+            display: none;
+            position: absolute;
+            top: 20%;
+            left: 30%;
+            width: 40%;
+            height: 50%;
+            border: 16px solid lightblue;
+            background-color: white;
+            z-index: 1002;
+            overflow: auto;
+        }
+    </style>
+    <script type="text/javascript">
+        //弹出隐藏层
+        function ShowDiv(show_div, bg_div) {
+            document.getElementById(show_div).style.display = 'block';
+            document.getElementById(bg_div).style.display = 'block';
+            var bgdiv = document.getElementById(bg_div);
+            bgdiv.style.width = document.body.scrollWidth;
+            // bgdiv.style.height = $(document).height();
+            $("#" + bg_div).height($(document).height());
+            $.ajax({
+                url:"/get_test/",
+                type:"get",
+                success: function(data){
+                    suit_data= eval(data['data']);
+                    tbody = $('#selectTable tbody')
+
+                    for (i in suit_data) {
+                        var tr=$('<tr class="pop_tr"></tr>');
+                        tr.append('<td><input style="width: 20px;margin: auto;" type="checkbox" value="' + suit_data[i].t_id + '"' +  '/></td><td>'+ suit_data[i].t_suit_name + '</td>' + '<td>'+ suit_data[i].t_name + '</td>');
+                        tbody.append(tr);
+                    }
+                    $('#selectTable tbody').replaceWith(tbody);
+                }
+            });
+        };
+        //关闭弹出层
+        function CloseDiv(show_div, bg_div) {
+            document.getElementById(show_div).style.display = 'none';
+            document.getElementById(bg_div).style.display = 'none';
+            $("#selectTable tbody").html("");
+        };
+    </script>
+</head>
+<body>
+<fieldset><legend>先创建运行集，勾选执行的用例</legend>
+    <button id="create" onclick="ShowDiv('MyDiv','fade')">添加</button>
+</fieldset>
+
+<!--弹出层时背景层DIV-->
+<div id="fade" class="black_overlay"  onclick="CloseDiv('MyDiv','fade')">
+</div>
+<div id="MyDiv" class="white_content">
+    <div style="text-align: right; cursor: default; height: 40px;">
+        <span style="font-size: 16px;" onclick="CloseDiv('MyDiv','fade')">关闭</span>
+    </div>
+    <table id="selectTable">
+        <thead>
+        <tr>
+            <th>勾选</th>
+            <th>业务归属</th>
+            <th>用例描述</th>
+
+        </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+</div>
+
+
+<fieldset><legend>已添加业务数据</legend>
+    <table id="myTable">
+        <thead>
+        <tr>
+            <th>业务归属</th>
+            <th>用例描述</th>
+            <th>请求方式</th>
+            <th>URL</th>
+            <th>Json数据</th>
+            <th>Data数据</th>
+            <th>预期结果</th>
+            <th>匹配类型</th>
+            <th>替换规则</th>
+            <th>header类型</th>
+        </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+</fieldset>
+
+</body>
+<script>
+    $(document).ready(function(){
+        // 页面加载，就查询已添加的数据
+        $.ajax({
+            url:"/get_suit/",
+            type:"get",
+            success: function(data){
+                suit_data= eval(data['data']);
+                select_suit = $('#i_suit')
+                for (i in suit_data) {
+                    select_suit.append('<option value=\'' + suit_data[i].s_id + '\'>'+ suit_data[i].s_name + '</option>');
+                }
+            }
+        });
+
+        $.ajax({
+            url:"/get_header/",
+            type:"get",
+            success: function(data){
+                suit_data= eval(data['data']);
+                select_suit = $('#i_header')
+                for (i in suit_data) {
+                    select_suit.append('<option value=\'' + suit_data[i].h_id + '\'>'+ suit_data[i].h_name + '</option>');
+                }
+            }
+        });
+
+        $.ajax({
+            url:"/get_test/",
+            type:"get",
+            success: function(data){
+                suit_data= eval(data['data']);
+                tbody = $('#myTable tbody')
+                for (i in suit_data) {
+                    var tr=$('<tr></tr>');
+                    tr.append('<td>'+ suit_data[i].t_suit_name + '</td>' + '<td>'+ suit_data[i].t_name + '</td>' + '<td>'+ suit_data[i].t_method + '</td>' + '<td>'+ suit_data[i].t_url + '</td>' + '<td>'+ suit_data[i].t_json + '</td>' + '<td>'+ suit_data[i].t_data + '</td>' + '<td>'+ suit_data[i].t_expected + '</td>' + '<td>'+ suit_data[i].t_match_type + '</td>' + '<td>'+ suit_data[i].t_replace_name + '</td>' + '<td>'+ suit_data[i].t_header_name + '</td>');
+                    tbody.append(tr);
+                }
+                $('#myTable tbody').replaceWith(tbody);
+            }
+        });
+    });
+
+    $('#submit').click(function (e) {
+        e.preventDefault();
+        // 业务id
+        var suit_id = $('#i_suit').val();
+        var i_name =  $.trim($('#i_case_name').val());
+        var i_url = $.trim($('#i_case_url').val());
+        var i_method = $('#i_method').val();
+        var i_header = $('#i_header').val();
+        var i_json = $.trim($('#i_json').val());
+        var i_data = $.trim($('#i_data').val());
+        var i_source_address = $.trim($('#i_source_address').val());
+        var i_expected = $.trim($('#i_expected').val());
+        var i_match_type = $('#i_match_tyoe').val();
+        var i_replace = $.trim($('#i_replace').val());
+
+        var _url = '/save_test/' ;
+        $.ajax({
+            url: _url,
+            type: 'POST',
+            data: JSON.stringify({'suit_id': suit_id, "i_name": i_name, "i_url": i_url, "i_method": i_method, "i_header":i_header, "i_json": i_json, "i_data":i_data, "i_source_address":i_source_address, "i_expected":i_expected, "i_match_type":i_match_type, "i_replace":i_replace}),
+            cache: false,
+            contentType:"application/json",
+        }).done(function (data) {
+            console.log('success,' + data);
+            $('#msg').text(data.msg)
+            //刷新页面
+            setTimeout( window.location.reload(),2000)
+
+        }).fail(function (res) {
+            $('#msg').text(res)
+        });
+    });
+
+</script>
+</html>

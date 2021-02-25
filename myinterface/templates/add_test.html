@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/static/css/forms.css">
+    <script src="/static/js/jquery-3.4.1.min.js"></script>
+    <style>
+        td{
+            width: 200px;
+            overflow: auto;
+            border:solid #ccc 1px;
+        }
+        table{
+            border: 1px solid #FFFFFF;
+        }
+        .i {
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+<h2>业务名称添加</h2>
+<fieldset >
+    <form>
+        <table>
+            <tr>
+                <p>
+                    <label> 业务归属：没有就先添加业务，用例归属到业务中</label>
+                    <br/>
+                    <select id="i_suit"/>
+
+                </p>
+
+            </tr>
+            <tr>
+                <p><input class="i" type="text" id="i_case_name" autocomplete="off" placeholder="用例描述"/></p>
+
+            </tr>
+            <tr>
+                <p><input class="i" type="text" id="i_case_url" autocomplete="off" placeholder="用例url"/></p>
+
+            </tr>
+
+            <tr>
+                <p>
+                    <label> 请求方法：</label>
+                    <select id="i_method">
+                        <option value="0">GET</option>
+                        <option value="1">POST</option>
+                    </select></p>
+
+            </tr>
+            <tr>
+                <p><label> 头部选择：</label><select id="i_header" /></p>
+
+            </tr>
+            <tr>
+                <p><textarea id="i_json" placeholder="填写json，如果有"  rows="7" cols="40" ></textarea></p>
+            </tr>
+            <tr>
+                <p><textarea id="i_data" placeholder="请求data，如果有，json和data只能填写一个" rows="7" cols="40"></textarea></p>
+
+            </tr>
+            <tr>
+                <p><input class="i" type="text" id="i_source_address" autocomplete="off" placeholder="请求的页面出处, 如：m.jiwu.com/sz"/></p>
+
+            </tr>
+            <tr>
+                <p><input class="i" type="text" id="i_expected" autocomplete="off" placeholder="预期结果"/></p>
+
+            </tr>
+            <tr>
+                <p>
+                    <label> 结果匹配方案：</label>
+                    <select id="i_match_tyoe">
+                        <option value="0">包含</option>
+                        <option value="1">相等</option>
+                    </select>
+                </p>
+            </tr>
+            <tr>
+                <p><input class="i" type="text" id="i_replace" autocomplete="off" placeholder="替换的字符串"/></p>
+            </tr>
+            <tr>
+                <input type="submit" id="submit" value="添加" />
+            </tr>
+            <tr>
+                <p id="msg">
+
+                </p>
+            </tr>
+        </table>
+    </form>
+
+</fieldset>
+
+<fieldset><legend>已添加业务数据</legend>
+    <table id="myTable">
+        <thead>
+        <tr>
+            <th>业务归属</th>
+            <th>用例描述</th>
+            <th>请求方式</th>
+            <th>URL</th>
+            <th>Json数据</th>
+            <th>Data数据</th>
+            <th>预期结果</th>
+            <th>匹配类型</th>
+            <th>替换规则</th>
+            <th>header类型</th>
+        </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+</fieldset>
+
+</body>
+<script>
+    $(document).ready(function(){
+        // 页面加载，就查询已添加的数据
+        $.ajax({
+            url:"/get_suit/",
+            type:"get",
+            success: function(data){
+                suit_data= eval(data['data']);
+                select_suit = $('#i_suit')
+                for (i in suit_data) {
+                    select_suit.append('<option value=\'' + suit_data[i].s_id + '\'>'+ suit_data[i].s_name + '</option>');
+                }
+            }
+        });
+
+        $.ajax({
+            url:"/get_header/",
+            type:"get",
+            success: function(data){
+                suit_data= eval(data['data']);
+                select_suit = $('#i_header')
+                for (i in suit_data) {
+                    select_suit.append('<option value=\'' + suit_data[i].h_id + '\'>'+ suit_data[i].h_name + '</option>');
+                }
+            }
+        });
+
+        $.ajax({
+            url:"/get_test/",
+            type:"get",
+            success: function(data){
+                suit_data= eval(data['data']);
+                tbody = $('#myTable tbody')
+                for (i in suit_data) {
+                    var tr=$('<tr></tr>');
+                    tr.append('<td>'+ suit_data[i].t_suit_name + '</td>' + '<td>'+ suit_data[i].t_name + '</td>' + '<td>'+ suit_data[i].t_method + '</td>' + '<td>'+ suit_data[i].t_url + '</td>' + '<td>'+ suit_data[i].t_json + '</td>' + '<td>'+ suit_data[i].t_data + '</td>' + '<td>'+ suit_data[i].t_expected + '</td>' + '<td>'+ suit_data[i].t_match_type + '</td>' + '<td>'+ suit_data[i].t_replace_name + '</td>' + '<td>'+ suit_data[i].t_header_name + '</td>');
+                    tbody.append(tr);
+                }
+                $('#myTable tbody').replaceWith(tbody);
+            }
+        });
+    });
+
+    $('#submit').click(function (e) {
+        e.preventDefault();
+        // 业务id
+        var suit_id = $('#i_suit').val();
+        var i_name =  $.trim($('#i_case_name').val());
+        var i_url = $.trim($('#i_case_url').val());
+        var i_method = $('#i_method').val();
+        var i_header = $('#i_header').val();
+        var i_json = $.trim($('#i_json').val());
+        var i_data = $.trim($('#i_data').val());
+        var i_source_address = $.trim($('#i_source_address').val());
+        var i_expected = $.trim($('#i_expected').val());
+        var i_match_type = $('#i_match_tyoe').val();
+        var i_replace = $.trim($('#i_replace').val());
+
+        var _url = '/save_test/' ;
+        $.ajax({
+            url: _url,
+            type: 'POST',
+            data: JSON.stringify({'suit_id': suit_id, "i_name": i_name, "i_url": i_url, "i_method": i_method, "i_header":i_header, "i_json": i_json, "i_data":i_data, "i_source_address":i_source_address, "i_expected":i_expected, "i_match_type":i_match_type, "i_replace":i_replace}),
+            cache: false,
+            contentType:"application/json",
+        }).done(function (data) {
+            console.log('success,' + data);
+            $('#msg').text(data.msg)
+            //刷新页面
+            setTimeout( window.location.reload(),2000)
+
+        }).fail(function (res) {
+            $('#msg').text(res)
+        });
+    });
+
+</script>
+</html>

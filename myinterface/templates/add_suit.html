@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/static/css/forms.css">
+    <script src="/static/js/jquery-3.4.1.min.js"></script>
+</head>
+<body>
+<h2>业务名称添加</h2>
+<fieldset >
+    <form>
+        <table>
+            <tr>
+                <p><input type="text" id="suit_name" autocomplete="off" placeholder="输入业务名称"/></p>
+
+            </tr>
+            <tr>
+                <input type="submit" id="submit" value="添加" />
+            </tr>
+            <tr>
+                <p id="msg">
+
+                </p>
+            </tr>
+        </table>
+    </form>
+
+</fieldset>
+
+<fieldset><legend>已添加业务数据</legend>
+    <table id="myTable">
+        <thead>
+        <tr>
+            <th>业务id</th>
+            <th>业务名称</th>
+        </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+</fieldset>
+
+</body>
+<script>
+    $(document).ready(function(){
+        // 页面加载，就查询已添加的数据
+        $.ajax({
+            url:"/get_suit",
+            type:"get",
+            success: function(data){
+                suit_data= eval(data['data']);
+                tbody = $('#myTable tbody')
+                for (i in suit_data) {
+                   var tr=$('<tr></tr>');
+                   tr.append('<td>'+ suit_data[i].s_id + '</td>' + '<td>'+ suit_data[i].s_name + '</td>');
+                   tbody.append(tr);
+                }
+                $('#myTable tbody').replaceWith(tbody);
+            }
+        });
+    });
+
+    $('#submit').click(function (e) {
+        e.preventDefault();
+        var suit_name = $('#suit_name').val()
+        var _url = '/save_suit/' ;
+        $.ajax({
+            url: _url,
+            type: 'POST',
+            data: JSON.stringify({'suit_name': suit_name}),
+            cache: false,
+            contentType:"application/json",
+        }).done(function (data) {
+            console.log('success,' + data);
+            $('#msg').text(data.msg)
+             //刷新页面
+            setTimeout( window.location.reload(),2000)
+
+        }).fail(function (res) {
+            $('#msg').text(res)
+        });
+    });
+
+</script>
+</html>
