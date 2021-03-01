@@ -10,6 +10,7 @@ from .http_ import HttpEntiry
 from .http_ import TestHttpEntiry
 from .common_ import *
 from .Views import TestResultView
+from .Views import Test
 
 
 def testview(request):
@@ -350,7 +351,11 @@ def get_test_result(request):
     return TestResultView.TestTesultView().get_test_result(request)
 
 
-def get_test(request):
+def get_test_from_info(request):
+    return Test.TestManager().get_test_from_info(request)
+
+
+def get_test_list(request):
     """查询用例"""
 
     lst = []
@@ -358,27 +363,23 @@ def get_test(request):
     for t in test_all:
         temp_dict = {}
 
-        temp_dict['t_id'] = t.id
-        temp_dict['t_name'] = t.case_name
-        temp_dict['t_url'] = t.case_url
-        temp_dict['t_method'] = "GET" if t.case_method == HttpMethod.GET.value else "POST"
+        dict_result = t.to_dict()
+
+        result_match_type = dict_result["result_match_type"]
+        dict_result["result_match_type"] = "相等" if result_match_type == MatchMethod.EQAUL.value else "包含"
+
+        test_method = dict_result['case_method']
+        dict_result['case_method'] = "GET" if test_method == HttpMethod.GET.value else "POST"
 
         t_h = HeaderManager.objects.filter(id=t.case_header_id)
 
-        temp_dict['t_header_name'] = t_h[0].header_name
-        temp_dict['t_json'] = t.case_json
-        temp_dict['t_data'] = t.case_data
-        temp_dict['t_expected'] = t.case_expected
-        temp_dict['t_source_address'] = t.source_address
-        temp_dict['t_able'] = t.is_able
+        dict_result['case_header_name'] = t_h[0].header_name
 
         suit_all = TestSuit.objects.filter(id=t.suit_id)
-        temp_dict['t_suit_name'] = suit_all[0].suit_name
 
-        temp_dict['t_match_type'] = "相等" if t.result_match_type == MatchMethod.EQAUL.value else "包含"
-        temp_dict['t_replace_name'] = t.replace_name
+        dict_result['case_suit_name'] = suit_all[0].suit_name
 
-        lst.append(temp_dict)
+        lst.append(dict_result)
 
     return JsonResponse({"data": lst})
 

@@ -116,44 +116,6 @@
         </el-col>
       </el-row>
     </el-form>
-
-    <el-row>
-      <el-table :data="test_lst" style="width: 100%" border>
-        <el-table-column prop="s_id" label="用例id" min-width="100">
-          <template slot-scope="scope"> {{ scope.row.t_id }}</template>
-        </el-table-column>
-        <el-table-column prop="s_name" label="用例名称" min-width="100">
-          <template slot-scope="scope"> {{ scope.row.t_name }}</template>
-        </el-table-column>
-        <el-table-column prop="s_u" label="Url" min-width="100">
-          <template slot-scope="scope"> {{ scope.row.t_url }}</template>
-        </el-table-column>
-        <el-table-column prop="s_m" label="Method" min-width="100">
-          <template slot-scope="scope"> {{ scope.row.t_method }}</template>
-        </el-table-column>
-        <el-table-column prop="s_m" label="PostData" min-width="100">
-          <template slot-scope="scope"> {{ scope.row.t_data }}</template>
-        </el-table-column>
-        <el-table-column prop="s_m" label="PostJson" min-width="100">
-          <template slot-scope="scope"> {{ scope.row.t_json }}</template>
-        </el-table-column>
-        <el-table-column prop="s_m" label="Method" min-width="100">
-          <template slot-scope="scope"> {{ scope.row.t_method }}</template>
-        </el-table-column>
-        <el-table-column prop="s_e" label="预期结果" min-width="100">
-          <template slot-scope="scope"> {{ scope.row.t_expected }}</template>
-        </el-table-column>
-        <el-table-column prop="s_h" label="header" min-width="100">
-          <template slot-scope="scope"> {{ scope.row.t_header_name }}</template>
-        </el-table-column>
-        <el-table-column prop="s_mu" label="替换字符串" min-width="100">
-          <template slot-scope="scope"> {{ scope.row.t_replace_name }}</template>
-        </el-table-column>
-        <el-table-column prop="s_mm" label="匹配规则" min-width="100">
-          <template slot-scope="scope"> {{ scope.row.t_match_type }}</template>
-        </el-table-column>
-      </el-table>
-    </el-row>
   </div>
 
 </template>

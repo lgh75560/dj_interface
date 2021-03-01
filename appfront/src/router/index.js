@@ -7,6 +7,7 @@ import TestAdd from  '@/components/TestAdd'
 import TestTable from  '@/components/TestTable'
 import Home from  '@/components/Home'
 import RunAdd from  '@/components/RunAdd'
+import TestList from  '@/components/TestManager'
 
 
 const originalPush = Router.prototype.push
@@ -24,6 +25,11 @@ export default new Router({
       name: 'Home',
       component: Home,
       children: [
+        {
+          path: '/test_list',
+          name: 'TestManager',
+          component: TestList
+        },
         {
           path: '/header',
           name: 'Header',

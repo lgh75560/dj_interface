@@ -27,6 +27,9 @@ class TestTesultView:
             return JsonResponse({"msg": "运行集，选择为空，执行结果失败"})
 
         lst = []
+        if str(run_id).strip() == "":
+            return JsonResponse({"msg": "没有找到运行集，执行结果失败"})
+
         choose_resultrun = TestResult.objects.filter(run_id=run_id)
         if len(choose_resultrun) > 0:
             for test_run in choose_resultrun:

@@ -29,7 +29,8 @@ urlpatterns = [
     path('get_suit/', views.get_suit),
 
     path('add_test/', views.go_add_test),
-    path('get_test/', views.get_test),
+    path('get_test/', views.get_test_list),
+    path('get_test_info/', views.get_test_from_info),
     path('save_test/', views.save_test),
     path('test_test/', views.test_test),
 

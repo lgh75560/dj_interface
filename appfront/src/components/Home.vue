@@ -22,8 +22,11 @@
     data() {
       return {
         navList: [{
-            name: '/test',
+            name: '/test_list',
             navItem: '用例管理'
+          },{
+            name: '/test',
+            navItem: '用例添加'
           },
           {
             name: '/TestTable',
