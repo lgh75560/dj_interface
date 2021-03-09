@@ -45,7 +45,7 @@
     },
     methods: {
       ShowSuit() {
-        this.$http.get("http://127.0.0.1:8001/get_header/").then((response) => {
+        this.$http.get(this.GLOBAL.BASE_URL + "get_header/").then((response) => {
 
           console.log(response.data);
           this.header_lst = response.data.data;
@@ -56,7 +56,7 @@
       },
       onSubmit() {
         console.log(this.head_add);
-        this.$http.post("http://127.0.0.1:8001/save_header/", this.head_add).then((response) => {
+        this.$http.post(this.GLOBAL.BASE_URL + "save_header/", this.head_add).then((response) => {
           this.$notify({
             title: '提示',
             message: response.data.msg,

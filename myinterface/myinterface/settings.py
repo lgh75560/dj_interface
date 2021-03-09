@@ -42,8 +42,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'corsheaders',
-    # 添加新路径
+    # 添加新路径，根目录.子目录，apache中用到
     'iface',
+    # 定时执行任务
+    'django_apscheduler'
 ]
 
 MIDDLEWARE = [
@@ -60,10 +62,7 @@ MIDDLEWARE = [
 # 跨域增加忽略
 CORS_ALLOW_CREDENTIALS = True  # 指明在跨域访问中，后端是否支持对cookie的操作
 CORS_ORIGIN_ALLOW_ALL = True
-CORS_ORIGIN_WHITELIST = (
-    'http://127.0.0.1:8080',
-    'http://localhost:8080', #凡是出现在白名单中的域名，都可以访问后端接口
-)
+
 CORS_ALLOW_METHODS = (
     'DELETE',
     'GET',
@@ -91,7 +90,7 @@ ROOT_URLCONF = 'myinterface.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR + "/templates", ],
+        'DIRS': [BASE_DIR + "/dist", ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -156,9 +155,10 @@ USE_TZ = False
 
 STATIC_URL = '/static/'
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+# STATIC_ROOT = os.path.join(BASE_DIR, "static")# 正确
+
+# 下面配置vue 打包项目的static 地址
 STATICFILES_DIRS = (
-    ('css', os.path.join(STATIC_ROOT, 'css').replace('\\', '/')),
-    ('js', os.path.join(STATIC_ROOT, 'js').replace('\\', '/')),
-    ('images', os.path.join(STATIC_ROOT, 'images').replace('\\', '/')),
+    # 之前BASE_DIR 写多了一个，路径错误
+    os.path.join(BASE_DIR, "dist/static"),
 )

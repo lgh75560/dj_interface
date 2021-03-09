@@ -29,8 +29,8 @@
             navItem: '用例添加'
           },
           {
-            name: '/TestTable',
-            navItem: '用例运行集合'
+            name: '/test_suit',
+            navItem: '用例集合添加'
           },
           {
             name: '/header',
@@ -41,8 +41,12 @@
             navItem: '业务添加'
           },
           {
-            name: '/run',
-            navItem: '运行集添加'
+            name: '/test_suit_run',
+            navItem: '执行运行集'
+          },
+          {
+            name: '/timer',
+            navItem: '添加定时器'
           },
         ],
       }
