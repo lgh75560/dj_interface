@@ -7,11 +7,14 @@ from django.http import JsonResponse
 from apscheduler.schedulers.background import BackgroundScheduler
 from django_apscheduler.jobstores import DjangoJobStore, register_events, register_job
 from apscheduler.triggers.interval import IntervalTrigger
+import logging
 
 from ..Views import ViewRunResult
 scheduler = BackgroundScheduler()
 scheduler.add_jobstore(DjangoJobStore(), 'default')
-import datetime
+
+logging.basicConfig()
+logging.getLogger('apscheduler').setLevel(logging.DEBUG)
 
 
 class TimerView:
@@ -37,7 +40,8 @@ class TimerView:
                 interval_seconds = float(interval_hour) * 60 * 60
                 if interval_seconds < 10:
                     interval_seconds = 10
-                job = scheduler.add_job(self.timming_run_result, trigger='interval', kwargs={"run_id": run_id}, seconds=interval_seconds, id=run_name)  # 每隔3h执行一次func
+                # 2021年3月10日09:01:36，添加misfire_grace_time，防止job miss
+                job = scheduler.add_job(self.timming_run_result, trigger='interval', kwargs={"run_id": run_id}, seconds=interval_seconds, id=run_name, misfire_grace_time=3600)
 
                 print(job.name)
                 return JsonResponse({"msg": "添加定时器成功 %s" % job.id, "retcode": 0})

@@ -2,41 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="78696588-8229-458e-835c-5e4ad723f386" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/appfront/config/global.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/appfront/src/components/TestSuitResultReport.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myinterface/iface/Views/ViewTestResult.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myinterface/iface/Views/ViewTimer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/3d240179-bdd8-48aa-b1eb-6d60636d611e.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/3d240179-bdd8-48aa-b1eb-6d60636d611e.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dj_interface.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dj_interface.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/appfront/build/utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/appfront/build/utils.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/appfront/build/webpack.prod.conf.js" beforeDir="false" afterPath="$PROJECT_DIR$/appfront/build/webpack.prod.conf.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/appfront/config/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/appfront/config/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/appfront/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/appfront/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/appfront/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/appfront/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/appfront/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/appfront/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/appfront/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/appfront/src/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/appfront/src/components/HeaderAdd.vue" beforeDir="false" afterPath="$PROJECT_DIR$/appfront/src/components/HeaderAdd.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/appfront/src/components/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/appfront/src/components/Home.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/appfront/src/components/RunAdd.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/appfront/src/components/TestAdd.vue" beforeDir="false" afterPath="$PROJECT_DIR$/appfront/src/components/TestAdd.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/appfront/src/components/TestManager.vue" beforeDir="false" afterPath="$PROJECT_DIR$/appfront/src/components/TestManager.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/appfront/src/components/TestResultView.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/appfront/src/components/TestSuit.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/appfront/src/components/TestTable.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/appfront/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/appfront/src/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/appfront/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/appfront/src/router/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/appfront/src/components/TestSuitManager.vue" beforeDir="false" afterPath="$PROJECT_DIR$/appfront/src/components/TestSuitManager.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myinterface/.htaccess" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/myinterface/cd" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/myinterface/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/myinterface/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myinterface/iface/Views/Test.py" beforeDir="false" afterPath="$PROJECT_DIR$/myinterface/iface/Views/ViewTest.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myinterface/iface/Views/TestResultView.py" beforeDir="false" afterPath="$PROJECT_DIR$/myinterface/iface/Views/ViewRunResult.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myinterface/dist/.htaccess" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/myinterface/dist/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/myinterface/dist/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myinterface/dist/static/js/manifest.2ae2e69a05c33dfc65f8.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/myinterface/dist/static/js/manifest.2ae2e69a05c33dfc65f8.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myinterface/iface/Views/ViewRunResult.py" beforeDir="false" afterPath="$PROJECT_DIR$/myinterface/iface/Views/ViewRunResult.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myinterface/iface/Views/ViewTimer.py" beforeDir="false" afterPath="$PROJECT_DIR$/myinterface/iface/Views/ViewTimer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myinterface/iface/bot_qywx.py" beforeDir="false" afterPath="$PROJECT_DIR$/myinterface/iface/bot_qywx.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/myinterface/iface/http_.py" beforeDir="false" afterPath="$PROJECT_DIR$/myinterface/iface/http_.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myinterface/iface/qq_mail.py" beforeDir="false" afterPath="$PROJECT_DIR$/myinterface/iface/qq_mail.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/myinterface/iface/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/myinterface/iface/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myinterface/myinterface/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/myinterface/myinterface/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myinterface/myinterface/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/myinterface/myinterface/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myinterface/static/css/forms.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myinterface/static/images/leaf.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myinterface/static/js/echarts.common.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myinterface/static/js/jquery-3.4.1.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myinterface/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/myinterface/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myinterface/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/myinterface/templates/.htaccess" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -45,7 +27,8 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/dj_interface$settings.coverage" NAME="settings Coverage Results" MODIFIED="1615254949842" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/myinterface/myinterface" />
+    <SUITE FILE_PATH="coverage/dj_interface$settings.coverage" NAME="settings Coverage Results" MODIFIED="1615278236802" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/myinterface/myinterface" />
+    <SUITE FILE_PATH="coverage/dj_interface$bot_qywx.coverage" NAME="bot_qywx Coverage Results" MODIFIED="1615282312446" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/myinterface/iface" />
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -82,49 +65,55 @@
     </expand>
     <select />
   </component>
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/appfront/src/components/TestAdd.vue">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/myinterface/iface/Views/ViewTimer.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="605">
-              <caret line="323" column="53" selection-start-line="323" selection-start-column="53" selection-end-line="323" selection-end-column="53" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/appfront/src/components/TestManager.vue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5335">
-              <caret line="284" column="52" selection-start-line="284" selection-start-column="52" selection-end-line="284" selection-end-column="52" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/appfront/src/components/HeaderAdd.vue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="244">
-              <caret line="58" column="59" selection-start-line="58" selection-start-column="48" selection-end-line="58" selection-end-column="59" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/myinterface/iface/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="338">
-              <caret line="77" column="66" selection-start-line="77" selection-start-column="66" selection-end-line="77" selection-end-column="66" />
+            <state relative-caret-position="342">
+              <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
               <folding>
-                <element signature="e#0#35#0" expanded="true" />
+                <element signature="e#89#100#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="das://3d240179-bdd8-48aa-b1eb-6d60636d611e/schema/main/table/iface_headermanager">
+        <entry file="file://D:/python3.6/Lib/logging/__init__.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="291">
+              <caret line="1835" column="4" selection-start-line="1835" selection-start-column="4" selection-end-line="1835" selection-end-column="4" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://D:/python3.6/Lib/site-packages/apscheduler/schedulers/base.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="291">
+              <caret line="374" column="8" selection-start-line="374" selection-start-column="8" selection-end-line="374" selection-end-column="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/myinterface/iface/Views/ViewRunResult.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="253">
+              <caret line="55" column="34" selection-start-line="55" selection-start-column="34" selection-end-line="55" selection-end-column="34" />
+              <folding>
+                <element signature="e#90#121#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="das://3d240179-bdd8-48aa-b1eb-6d60636d611e/schema/main/table/django_apscheduler_djangojob">
           <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
             <state>
               <filtering enabled="true" />
@@ -133,39 +122,43 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/myinterface/iface/http_.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="46" selection-start-line="46" selection-end-line="46" />
+        <entry file="das://3d240179-bdd8-48aa-b1eb-6d60636d611e/schema/main/table/django_apscheduler_djangojobexecution">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/appfront/src/components/TestSuitAdd.vue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="605">
-              <caret line="55" column="53" selection-start-line="55" selection-start-column="53" selection-end-line="55" selection-end-column="53" />
+        <entry file="das://3d240179-bdd8-48aa-b1eb-6d60636d611e/schema/main/table/iface_befortest">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/appfront/src/components/Timer_.vue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
-              <caret line="114" column="13" selection-start-line="114" selection-start-column="13" selection-end-line="114" selection-end-column="13" />
+        <entry file="das://3d240179-bdd8-48aa-b1eb-6d60636d611e/schema/main/table/django_session">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/appfront/config/global.js">
-          <provider selected="true" editor-type-id="text-editor" />
+      <file pinned="false" current-in-tab="false">
+        <entry file="das://3d240179-bdd8-48aa-b1eb-6d60636d611e/schema/main/table/django_migrations">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="das://3d240179-bdd8-48aa-b1eb-6d60636d611e/schema/main/table/iface_itest">
+        <entry file="das://3d240179-bdd8-48aa-b1eb-6d60636d611e/schema/main/table/django_content_type">
           <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
             <state>
               <filtering enabled="true" />
@@ -185,18 +178,15 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>pageSizes</find>
       <find>InitSelect</find>
       <find>get_test_result</find>
       <find>run_id</find>
       <find>handlechange</find>
       <find>TestSuit</find>
       <find>get_run</find>
-      <find>get_test</find>
       <find>hours</find>
       <find>id</find>
       <find>job</find>
-      <find>misfire_grace_time</find>
       <find>coalesce</find>
       <find>trigger</find>
       <find>next_run_time</find>
@@ -204,7 +194,6 @@
       <find>total</find>
       <find>get_te</find>
       <find>group</find>
-      <find>get_run_select</find>
       <find>webpack.prod.conf.js</find>
       <find>CORS_ORIGIN_WHITELIST</find>
       <find>generateLoaders</find>
@@ -215,6 +204,10 @@
       <find>&quot;http://192.168.100.104:8001/</find>
       <find>save_header</find>
       <find>real_header</find>
+      <find>get_run_select</find>
+      <find>init_replace_data</find>
+      <find>get_test</find>
+      <find>misfire_grace_time</find>
     </findStrings>
     <replaceStrings>
       <replace>max_length</replace>
@@ -247,7 +240,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/myinterface/myinterface/wsgi.py" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/bf587cb5-b8ce-4a1d-8a5e-f7c7a0fe2b71/console.sql" />
         <option value="$PROJECT_DIR$/myinterface/templates/add_suit.html" />
         <option value="$PROJECT_DIR$/myinterface/static/css/forms.css" />
@@ -273,30 +265,32 @@
         <option value="$PROJECT_DIR$/appfront/src/App.vue" />
         <option value="$PROJECT_DIR$/myinterface/iface/Views/BackgroundSchedulerEntity.py" />
         <option value="$PROJECT_DIR$/myinterface/iface/BackgroundSchedulerEntity.py" />
-        <option value="$PROJECT_DIR$/myinterface/iface/qq_mail.py" />
-        <option value="$PROJECT_DIR$/myinterface/iface/Views/ViewTimer.py" />
-        <option value="$PROJECT_DIR$/myinterface/iface/Views/ViewRunResult.py" />
         <option value="$PROJECT_DIR$/appfront/build/webpack.prod.conf.js" />
         <option value="$PROJECT_DIR$/appfront/vue.config.js" />
         <option value="$PROJECT_DIR$/myinterface/myinterface/urls.py" />
         <option value="$PROJECT_DIR$/appfront/src/router/index.js" />
         <option value="$PROJECT_DIR$/appfront/config/index.js" />
         <option value="$PROJECT_DIR$/myinterface/myinterface/settings.py" />
-        <option value="$PROJECT_DIR$/myinterface/iface/http_.py" />
         <option value="$PROJECT_DIR$/appfront/build/utils.js" />
         <option value="$PROJECT_DIR$/appfront/src/main.js" />
         <option value="$PROJECT_DIR$/appfront/src/components/HeaderAdd.vue" />
         <option value="$PROJECT_DIR$/appfront/src/components/TestAdd.vue" />
         <option value="$PROJECT_DIR$/appfront/src/components/TestManager.vue" />
         <option value="$PROJECT_DIR$/appfront/src/components/TestSuitAdd.vue" />
-        <option value="$PROJECT_DIR$/appfront/src/components/TestSuitManager.vue" />
         <option value="$PROJECT_DIR$/appfront/src/components/TestSuitResultReport.vue" />
         <option value="$PROJECT_DIR$/appfront/src/components/TestSuitResultTable.vue" />
         <option value="$PROJECT_DIR$/appfront/src/components/TestSuitRun.vue" />
         <option value="$PROJECT_DIR$/appfront/src/components/Timer_.vue" />
-        <option value="$PROJECT_DIR$/myinterface/iface/views.py" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/.datagrid/cell" />
+        <option value="$PROJECT_DIR$/myinterface/iface/http_.py" />
         <option value="$PROJECT_DIR$/appfront/config/global.js" />
+        <option value="$PROJECT_DIR$/appfront/src/components/TestSuitManager.vue" />
+        <option value="$PROJECT_DIR$/myinterface/iface/views.py" />
+        <option value="$PROJECT_DIR$/myinterface/iface/tests.py" />
+        <option value="$PROJECT_DIR$/myinterface/iface/qq_mail.py" />
+        <option value="$PROJECT_DIR$/myinterface/iface/bot_qywx.py" />
+        <option value="$PROJECT_DIR$/myinterface/iface/Views/ViewRunResult.py" />
+        <option value="$PROJECT_DIR$/myinterface/iface/Views/ViewTimer.py" />
       </list>
     </option>
   </component>
@@ -322,6 +316,11 @@
               <item name="dj_interface" type="b2602c69:ProjectViewProjectNode" />
               <item name="dj_interface" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="dj_interface" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dj_interface" type="462c0819:PsiDirectoryNode" />
+              <item name="myinterface" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -333,10 +332,11 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="editor.config.ad.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/myinterface" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.django.DjangoModulesConfigurable" />
     <property name="ts.external.directory.path" value="D:\PyCharm 2018.3\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
   <component name="RecentsManager">
@@ -362,7 +362,29 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.settings">
+  <component name="RunManager" selected="Python.bot_qywx">
+    <configuration name="bot_qywx" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="dj_interface" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/myinterface/iface" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/myinterface/iface/bot_qywx.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="settings" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="dj_interface" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -398,9 +420,11 @@
     <list>
       <item itemvalue="npm.vue_run" />
       <item itemvalue="Python.settings" />
+      <item itemvalue="Python.bot_qywx" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.bot_qywx" />
         <item itemvalue="Python.settings" />
       </list>
     </recent_temporary>
@@ -449,11 +473,20 @@
       <workItem from="1615165923983" duration="15069000" />
       <workItem from="1615198410411" duration="426000" />
       <workItem from="1615253083985" duration="1957000" />
+      <workItem from="1615264613340" duration="85000" />
+      <workItem from="1615268617846" duration="431000" />
+      <workItem from="1615273733115" duration="2853000" />
+      <workItem from="1615277293172" duration="2531000" />
+      <workItem from="1615280044335" duration="168000" />
+      <workItem from="1615280404291" duration="349000" />
+      <workItem from="1615281406718" duration="19000" />
+      <workItem from="1615281950360" duration="415000" />
+      <workItem from="1615337562839" duration="1574000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="210904000" />
+    <option name="totallyTimeSpent" value="219329000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -466,13 +499,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24946696" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22014925" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.5506118" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3147942" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.05228031" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.46222222" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -481,7 +515,7 @@
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.32925472" />
       <window_info anchor="bottom" id="Database Changes" order="10" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.36818686" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.13681869" />
       <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" />
       <window_info anchor="bottom" id="Python Console" order="13" weight="0.24249166" />
       <window_info anchor="bottom" id="TypeScript" order="14" />
@@ -496,104 +530,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/.PyCharm2018.3/system/python_stubs/1699770153/builtins.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="2889" column="8" selection-start-line="2889" selection-start-column="8" selection-end-line="2889" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/myinterface/iface/bot_qywx.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.PyCharm2018.3/system/python_stubs/1699770153/_socket.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3781">
-          <caret line="199" column="4" selection-start-line="199" selection-start-column="4" selection-end-line="199" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/myinterface/iface/qq_mail.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="855">
-          <caret line="51" column="61" selection-start-line="51" selection-start-column="61" selection-end-line="51" selection-end-column="61" />
-          <folding>
-            <element signature="e#0#14#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://3d240179-bdd8-48aa-b1eb-6d60636d611e/schema/main/table/django_apscheduler_djangojob" />
-    <entry file="das://3d240179-bdd8-48aa-b1eb-6d60636d611e/schema/main/table/django_apscheduler_djangojobexecution" />
-    <entry file="file://$PROJECT_DIR$/myinterface/iface/Views/ViewRunResult.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="469">
-          <caret line="66" column="43" selection-start-line="66" selection-start-column="43" selection-end-line="66" selection-end-column="43" />
-          <folding>
-            <element signature="e#90#121#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/appfront/node_modules/last-call-webpack-plugin/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="138" selection-start-line="138" selection-end-line="138" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://D:/python3.6/Lib/site-packages/django/apps/config.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="117" selection-start-line="117" selection-end-line="117" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://D:/python3.6/Lib/site-packages/django/core/management/base.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-849">
-          <caret line="435" selection-start-line="435" selection-end-line="435" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/myinterface/myinterface/wsgi.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/appfront/vue.config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="3" column="4" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/myinterface/myinterface/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="515">
-          <caret line="54" column="6" selection-start-line="54" selection-start-column="6" selection-end-line="54" selection-end-column="6" />
-          <folding>
-            <element signature="e#636#664#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://D:/python3.6/Lib/threading.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="166">
-          <caret line="863" selection-start-line="863" selection-end-line="863" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://D:/python3.6/Lib/site-packages/django/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="341">
-          <caret line="23" selection-start-line="23" selection-end-line="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://D:/python3.6/Lib/site-packages/django/utils/autoreload.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="158">
@@ -629,58 +565,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/myinterface/iface/Views/ViewTestResult.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="689">
-          <caret line="47" column="28" selection-start-line="47" selection-start-column="28" selection-end-line="47" selection-end-column="28" />
-          <folding>
-            <element signature="e#90#121#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/myinterface/iface/Views/ViewTimer.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="11" column="31" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://3d240179-bdd8-48aa-b1eb-6d60636d611e/schema/main/table/iface_testresult">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://3d240179-bdd8-48aa-b1eb-6d60636d611e/schema/main/table/iface_testrun">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://3d240179-bdd8-48aa-b1eb-6d60636d611e/schema/main/table/sqlite_master">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://3d240179-bdd8-48aa-b1eb-6d60636d611e/schema/main/table/iface_testsuit">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://3d240179-bdd8-48aa-b1eb-6d60636d611e/schema/main/table/iface_befortest">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/myinterface/iface/Views/ViewTest.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="304">
@@ -688,13 +572,6 @@
           <folding>
             <element signature="e#90#121#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/myinterface/iface/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="22" column="50" selection-start-line="22" selection-start-column="50" selection-end-line="22" selection-end-column="50" />
         </state>
       </provider>
     </entry>
@@ -752,13 +629,6 @@
     <entry file="file://$PROJECT_DIR$/appfront/src/components/HelloWorld.vue">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/appfront/src/components/TestSuitManager.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="605">
-          <caret line="304" column="52" selection-start-line="304" selection-start-column="52" selection-end-line="304" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/appfront/src/components/TestSuitResultReport.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="605">
@@ -780,10 +650,144 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/appfront/src/components/TestAdd.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6137">
+          <caret line="323" column="53" selection-start-line="323" selection-start-column="53" selection-end-line="323" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/appfront/src/components/TestManager.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5396">
+          <caret line="284" column="52" selection-start-line="284" selection-start-column="52" selection-end-line="284" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/appfront/src/components/HeaderAdd.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1102">
+          <caret line="58" column="59" selection-start-line="58" selection-start-column="48" selection-end-line="58" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/python3.6/Lib/datetime.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="9386">
+          <caret line="495" column="8" selection-start-line="495" selection-start-column="8" selection-end-line="495" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/appfront/src/components/TestSuitAdd.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1045">
+          <caret line="55" column="53" selection-start-line="55" selection-start-column="53" selection-end-line="55" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myinterface/iface/http_.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="183" column="17" lean-forward="true" selection-start-line="183" selection-start-column="17" selection-end-line="183" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/python3.6/Lib/site-packages/django/db/models/fields/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="33991">
+          <caret line="1820" selection-start-line="1820" selection-end-line="1820" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myinterface/iface/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="392" column="32" lean-forward="true" selection-start-line="392" selection-start-column="32" selection-end-line="392" selection-end-column="32" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/python3.6/Lib/site-packages/django/db/models/manager.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3021">
+          <caret line="164" selection-start-line="164" selection-end-line="164" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myinterface/myinterface/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="570">
+          <caret line="35" column="32" selection-start-line="35" selection-start-column="32" selection-end-line="35" selection-end-column="32" />
+          <folding>
+            <element signature="e#636#664#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myinterface/iface/tests.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myinterface/iface/qq_mail.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1178">
+          <caret line="68" column="17" selection-start-line="68" selection-start-column="17" selection-end-line="68" selection-end-column="17" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myinterface/iface/bot_qywx.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="912">
+          <caret line="49" column="91" selection-start-line="49" selection-start-column="91" selection-end-line="49" selection-end-column="91" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myinterface/iface/Views/ViewTestResult.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="513">
+          <caret line="35" column="45" selection-start-line="35" selection-start-column="45" selection-end-line="35" selection-end-column="45" />
+          <folding>
+            <element signature="e#90#121#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myinterface/iface/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="5" column="6" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/appfront/src/components/Timer_.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
+        <state relative-caret-position="2166">
           <caret line="114" column="13" selection-start-line="114" selection-start-column="13" selection-end-line="114" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/appfront/config/global.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/appfront/src/components/TestSuitManager.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6099">
+          <caret line="321" selection-start-line="321" selection-end-line="321" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://3d240179-bdd8-48aa-b1eb-6d60636d611e/schema/main/table/iface_testresult">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
@@ -794,48 +798,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/appfront/src/components/TestAdd.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="605">
-          <caret line="323" column="53" selection-start-line="323" selection-start-column="53" selection-end-line="323" selection-end-column="53" />
+    <entry file="das://3d240179-bdd8-48aa-b1eb-6d60636d611e/schema/main/table/iface_testrun">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/appfront/src/components/TestSuitAdd.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="605">
-          <caret line="55" column="53" selection-start-line="55" selection-start-column="53" selection-end-line="55" selection-end-column="53" />
+    <entry file="das://3d240179-bdd8-48aa-b1eb-6d60636d611e/schema/main/table/iface_testsuit">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/appfront/src/components/TestManager.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5335">
-          <caret line="284" column="52" selection-start-line="284" selection-start-column="52" selection-end-line="284" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/appfront/src/components/HeaderAdd.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="244">
-          <caret line="58" column="59" selection-start-line="58" selection-start-column="48" selection-end-line="58" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/myinterface/iface/http_.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="46" selection-start-line="46" selection-end-line="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/myinterface/iface/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="338">
-          <caret line="77" column="66" selection-start-line="77" selection-start-column="66" selection-end-line="77" selection-end-column="66" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-          </folding>
+    <entry file="das://3d240179-bdd8-48aa-b1eb-6d60636d611e/schema/main/table/sqlite_master">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
@@ -846,8 +826,81 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/appfront/config/global.js">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="das://3d240179-bdd8-48aa-b1eb-6d60636d611e/schema/main/table/iface_befortest">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://3d240179-bdd8-48aa-b1eb-6d60636d611e/schema/main/table/django_session">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://3d240179-bdd8-48aa-b1eb-6d60636d611e/schema/main/table/django_migrations">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://3d240179-bdd8-48aa-b1eb-6d60636d611e/schema/main/table/django_content_type">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myinterface/iface/Views/ViewRunResult.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="55" column="34" selection-start-line="55" selection-start-column="34" selection-end-line="55" selection-end-column="34" />
+          <folding>
+            <element signature="e#90#121#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://3d240179-bdd8-48aa-b1eb-6d60636d611e/schema/main/table/django_apscheduler_djangojob">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://3d240179-bdd8-48aa-b1eb-6d60636d611e/schema/main/table/django_apscheduler_djangojobexecution">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/python3.6/Lib/site-packages/apscheduler/schedulers/base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="291">
+          <caret line="374" column="8" selection-start-line="374" selection-start-column="8" selection-end-line="374" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/python3.6/Lib/logging/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="291">
+          <caret line="1835" column="4" selection-start-line="1835" selection-start-column="4" selection-end-line="1835" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myinterface/iface/Views/ViewTimer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+          <folding>
+            <element signature="e#89#100#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
     </entry>
   </component>
 </project>

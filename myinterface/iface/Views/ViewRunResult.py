@@ -232,8 +232,8 @@ class RunResult:
             myaddr = socket.gethostbyname(myname)
         except:
             myaddr = 'localhost'
-        report_url = "http://" + myaddr + ":8080/test_report?run_id=" + str(run_id) + "&counter_id=" + str(run_max_count['run_counter__max'])
+        report_url = "http://" + myaddr + ":8001/test_report?run_id=" + str(run_id) + "&counter_id=" + str(run_max_count['run_counter__max'])
         print(report_url)
         if fail_count > 0:
-            QywxBot().send_text_use_test_group(type_text="业务-%s出现错误，from django web" % run_name, pass_count=pass_count, fail_count=fail_count, fail_list=fail_lst)
+            QywxBot().send_text_use_test_group(type_text="业务-%s出现错误，from django web" % run_name, pass_count=pass_count, fail_count=fail_count, fail_list=fail_lst, url=report_url)
             SendMail().send_report_with_dict(title="业务-%s出现错误，from django web" % run_name, case_list=lst2, total=len(test_res), pass_count=pass_count, fail_count=fail_count, to_mail="liaoguohu@jiwu.com", attach_url=report_url)

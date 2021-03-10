@@ -365,7 +365,7 @@ def get_test_list(request):
         current_page = request.GET.get('currentPage', None)
         page_size = request.GET.get('PageSize', None)
         suit = request.GET.get('suit', None)
-        # print("current_page" + current_page)
+        is_send_phone = request.GET.get('is_send_phone', None)
         # print("page_size" + page_size)
         # print("suit %s" % suit)
     else:
@@ -374,11 +374,29 @@ def get_test_list(request):
         return JsonResponse({"msg": "current_page or page_size 为空", "retcode": -1})
 
     lst = []
-    if suit is not None:
+    is_null_phone_replace = False
 
-        s_all = ITest.objects.filter(suit_id=suit)
-    else:
+    is_not_all_search = False
+    # 多条件组合筛选
+    condition = {}
+    if suit is not None and str(suit).strip() != "":
+        condition["suit_id"] = suit
+        is_not_all_search = True
+
+    if is_send_phone is not None:
+        if int(is_send_phone) == 1:
+            # condition["replace_name__isnull"] = False
+            condition["replace_name__gt"] = ''
+        else:
+            condition["replace_name__exact"] = ''
+
+        is_not_all_search = True
+
+    if not is_not_all_search:
         s_all = ITest.objects.all()
+    else:
+        print("查询条件 %s" % condition)
+        s_all = ITest.objects.filter(**condition)
 
     # #设置每一页显示几条  创建一个panginator对象
     ptr = Paginator(s_all, page_size)

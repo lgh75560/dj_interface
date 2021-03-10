@@ -9,7 +9,13 @@
             <el-option v-for="item in suit" :key="item.s_id" :label="item.s_name" :value="item.s_id">
             </el-option>
           </el-select>
-
+        </el-col>
+        <el-col :span="8">
+          是否包含留咨接口
+          <el-select v-model="choose_is_send_phone" placeholder="是否包含留咨接口" @change="suit_change">
+            <el-option v-for="item in t_is_send_phone" :key="item.value" :label="item.lable" :value="item.value">
+            </el-option>
+          </el-select>
         </el-col>
       </el-row>
     </div>
@@ -87,6 +93,7 @@
         //
         run_name: '',
         choose_run_id: '',
+        choose_is_send_phone: "",
         run_id: '',
         choose_lst: [],
         suit: {
@@ -101,6 +108,15 @@
           {
             lable: "POST",
             value: 2
+          }
+        ],
+        t_is_send_phone: [{
+            lable: "是",
+            value: 1
+          },
+          {
+            lable: "否",
+            value: 0
           }
         ],
         t_match_type: [{
@@ -264,7 +280,8 @@
       },
       // 将页码，及每页显示的条数以参数传递提交给后台
       getData(n1, n2) {
-        this.$http.get(this.GLOBAL.BASE_URL + "get_test/?currentPage=" + this.currentPage + "&PageSize=" + this.PageSize)
+
+        this.$http.get(this.GLOBAL.BASE_URL + "get_test/?currentPage=" + this.currentPage + "&PageSize=" + this.PageSize + "&suit="+this.choose_suit + "&is_send_phone=" + this.choose_is_send_phone)
           .then((response) => {
 
             if (response.data.retcode == 0) {
@@ -302,7 +319,8 @@
       },
       suit_change(val) {
         this.currentPage = 1
-        this.$http.get(this.GLOBAL.BASE_URL + "get_test/?currentPage=" + this.currentPage + "&PageSize=" + this.PageSize + "&suit="+this.choose_suit)
+
+        this.$http.get(this.GLOBAL.BASE_URL + "get_test/?currentPage=" + this.currentPage + "&PageSize=" + this.PageSize + "&suit="+this.choose_suit + "&is_send_phone=" + this.choose_is_send_phone)
           .then((response) => {
 
             if (response.data.retcode == 0) {

@@ -185,7 +185,7 @@ class HttpEntiry:
                 current_time = datetime.datetime.now()
                 print("当前时间 %s" % current_time)
                 print("数据库字段时间 %s" % repalcer[0].replace_update_time)
-                if (current_time - repalcer[0].replace_update_time).seconds > 120:
+                if (current_time - repalcer[0].replace_update_time).seconds > 18000:
                     phone_star = "171"
                     phone_random = random.randint(10000000, 99999999)
                     phone_all = phone_star + str(phone_random)

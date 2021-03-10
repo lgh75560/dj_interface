@@ -10,8 +10,10 @@ import xlrd
 class SendMail:
 
     def send_report_with_dict(self, title, case_list, to_mail, total, pass_count, fail_count, attach_url):
-        msg_from = '3012328624@qq.com'  # 发送方邮箱
-        passwd = 'hewpangxataidfdj'  # 填入发送方邮箱的授权码
+        # msg_from = '3012328624@qq.com'  # 发送方邮箱
+        # passwd = 'hewpangxataidfdj'  # 填入发送方邮箱的授权码
+        msg_from = 'liaoguohu@jiwu.com'  # 发送方邮箱
+        passwd = 'Lgh2019'  # 填入发送方邮箱的授权码
         msg_to = to_mail
 
         subject = title + str(time.strftime('%Y-%m-%d', time.localtime(time.time())))  # 主题
@@ -72,7 +74,7 @@ class SendMail:
         msg.attach(message)
 
         try:
-            s = smtplib.SMTP("smtp.qq.com", 25)
+            s = smtplib.SMTP("smtp.exmail.qq.com", 25)
             s.login(msg_from, passwd)
             s.sendmail(msg_from, msg_to.split(","), msg.as_string())
             print("发送成功")
