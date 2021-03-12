@@ -4,7 +4,6 @@ from email.mime.text import MIMEText
 import platform
 from email.mime.application import MIMEApplication
 from email.mime.multipart import MIMEMultipart
-import xlrd
 
 
 class SendMail:
@@ -21,7 +20,7 @@ class SendMail:
         html = ""
         add_str = ""
         row_list = []
-        need_header = ["request_data", "result_pass", "case_expected", "case_name", "case_url", 'result_match_type', "suit_name"]
+        need_header = ["case_id", "request_data", "result_pass", "case_expected", "case_name", "case_url", 'result_match_type', "suit_name"]
         true_header = []
         is_init = False
         # 获取 用例list
@@ -91,10 +90,10 @@ class SendMail:
         for kk in range(0, len(_list)):
             out_str += "<tr>"
             for yy in range(0, len(_list[kk])):
-                if (_list[kk][yy]) is True:
+                if str(_list[kk][yy]) == "True":
                     out_str += "<td class='green'>" + str(_list[kk][yy]) + "</td>"
                     continue
-                if (_list[kk][yy]) is False:
+                if str(_list[kk][yy]) == "Failse":
                     out_str += "<td class='red'>" + str(_list[kk][yy]) + "</td>"
                     continue
                 out_str += "<td>" + str(_list[kk][yy]) + "</td>"

@@ -29,6 +29,10 @@
             navItem: '用例添加'
           },
           {
+            name: '/test_edit',
+            navItem: '编辑用例'
+          },
+          {
             name: '/test_suit',
             navItem: '用例集合添加'
           },

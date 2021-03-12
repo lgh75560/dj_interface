@@ -117,6 +117,7 @@ class RunResult:
                 run_id = data.get('run_id', None)
                 run_counter = data.get('run_counter', None)
 
+        total = 0
         if run_id is not None and str(run_id).strip() != "":
             test_res = TestResult.objects.filter(run_id=int(run_id), run_counter=run_counter)
 
@@ -128,6 +129,7 @@ class RunResult:
             pass_count = 0
             fail_count = 0
             unkown_count = 0
+            total = len(test_res)
             for res in test_res:
                 if res.result_pass is True:
                     pass_count += 1
@@ -147,7 +149,7 @@ class RunResult:
                     except Exception as e3:
                         continue
                     dict_test = get_test.to_dict()
-
+                    dict_test['case_id'] = dict_test['id']
                     try:
                         get_suit = TestSuit.objects.get(id=dict_test["suit_id"])
                     except Exception as e3:
@@ -166,7 +168,7 @@ class RunResult:
                     lst2.append(y)
                 except Exception as e1:
                     pass
-            return JsonResponse({"data": lst2, "retcode": 0, "pass_count": pass_count, "fail_count": fail_count, "unkown_count": unkown_count, "run_name": run_name})
+            return JsonResponse({"data": lst2, "retcode": 0, "pass_count": pass_count, "fail_count": fail_count, "unkown_count": unkown_count, "run_name": run_name, "total": total})
         else:
             return JsonResponse({"msg": "rund_id为空，无法获取数据", "retcode": -1})
 
@@ -226,14 +228,15 @@ class RunResult:
             except Exception as e1:
                 pass
 
+        print(fail_lst)
         try:
             myname = socket.getfqdn(socket.gethostname())
             # 获取本机ip
             myaddr = socket.gethostbyname(myname)
         except:
             myaddr = 'localhost'
-        report_url = "http://" + myaddr + ":8001/test_report?run_id=" + str(run_id) + "&counter_id=" + str(run_max_count['run_counter__max'])
+        report_url = "http://" + myaddr + ":8001/#/test_report?run_id=" + str(run_id) + "&counter_id=" + str(run_max_count['run_counter__max'])
         print(report_url)
         if fail_count > 0:
-            QywxBot().send_text_use_test_group(type_text="业务-%s出现错误，from django web" % run_name, pass_count=pass_count, fail_count=fail_count, fail_list=fail_lst, url=report_url)
-            SendMail().send_report_with_dict(title="业务-%s出现错误，from django web" % run_name, case_list=lst2, total=len(test_res), pass_count=pass_count, fail_count=fail_count, to_mail="liaoguohu@jiwu.com", attach_url=report_url)
+            QywxBot().send_text(type_text="业务-%s出现错误：" % run_name, pass_count=pass_count, fail_count=fail_count, fail_list=fail_lst, url=report_url)
+            SendMail().send_report_with_dict(title="业务-%s出现错误：" % run_name, case_list=lst2, total=len(test_res), pass_count=pass_count, fail_count=fail_count, to_mail="liaoguohu@jiwu.com", attach_url=report_url)

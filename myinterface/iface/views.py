@@ -13,6 +13,8 @@ from .Views import ViewTestResult
 from django.core.paginator import Paginator
 from .Views import ViewRunResult
 from .Views import ViewTimer
+from .Views import ViewCommon
+import logging
 
 
 server_host = ""
@@ -187,16 +189,16 @@ def save_test(request):
     if request.method == 'POST':
         data = json.loads(request.body)
         suit_id = data.get('suit_id', None)
-        test_name = data.get('i_name', None)
-        test_url = data.get('i_url', None)
-        test_method = data.get('i_method', None)
-        test_header = data.get('i_header', None)
-        test_json = data.get('i_json', None)
-        test_data = data.get('i_data', None)
-        test_source_address = data.get('i_source_address', None)
-        test_expected = data.get('i_expected', None)
-        test_match_type = data.get('i_match_type', None)
-        test_replace = data.get('i_replace', None)
+        test_name = data.get('case_name', None)
+        test_url = data.get('case_url', None)
+        test_method = data.get('case_method', None)
+        test_header = data.get('case_header_id', None)
+        test_json = data.get('case_json', None)
+        test_data = data.get('case_data', None)
+        test_source_address = data.get('source_address', None)
+        test_expected = data.get('case_expected', None)
+        test_match_type = data.get('result_match_type', None)
+        test_replace = data.get('replace_name', None)
 
     else:
         return JsonResponse({"msg": "不支持非post"})
@@ -217,27 +219,29 @@ def save_test(request):
         return JsonResponse({"msg": "有数据为空，请检查"})
 
 
+bb = logging.getLogger("aa")
 def test_test(request):
     """检查新加的是否可用"""
 
     if request.method == 'POST':
         data = json.loads(request.body)
         suit_id = data.get('suit_id', None)
-        test_name = data.get('i_name', None)
-        test_url = data.get('i_url', None)
-        test_method = data.get('i_method', None)
-        test_header = data.get('i_header', None)
-        test_json = data.get('i_json', None)
-        test_data = data.get('i_data', None)
-        test_source_address = data.get('i_source_address', None)
-        test_expected = data.get('i_expected', None)
-        test_match_type = data.get('i_match_type', None)
-        test_replace = data.get('i_replace', None)
+        test_name = data.get('case_name', None)
+        test_url = data.get('case_url', None)
+        test_method = data.get('case_method', None)
+        test_header = data.get('case_header_id', None)
+        test_json = data.get('case_json', None)
+        test_data = data.get('case_data', None)
+        test_source_address = data.get('source_address', None)
+        test_expected = data.get('case_expected', None)
+        test_match_type = data.get('result_match_type', None)
+        test_replace = data.get('replace_name', None)
 
     else:
         return JsonResponse({"msg": "不支持非post"})
 
-    # print("%s %s %s %s %s" % (test_url, test_method, test_header, test_expected, test_match_type))
+    bb.debug("xxx")
+    print("%s %s %s %s %s" % (test_url, test_method, test_header, test_expected, test_match_type))
     # print(test_url and test_method and test_header and test_expected and test_match_type)
     if (test_url is not None) and (test_method is not None) and (test_header is not None) and (test_expected is not None) and (test_match_type is not None):
 
@@ -358,6 +362,16 @@ def get_test_from_info(request):
     return ViewTest.TestManager().get_test_from_info(request)
 
 
+def get_test_by_id(request):
+    """通过id获取用例"""
+    return ViewTest.TestManager().get_test_by_id(request)
+
+
+def update_one_test(request):
+    """通过id获取用例"""
+    return ViewTest.TestManager().update_one_test(request)
+
+
 def get_test_list(request):
     """查询用例"""
     if request:
@@ -383,7 +397,7 @@ def get_test_list(request):
         condition["suit_id"] = suit
         is_not_all_search = True
 
-    if is_send_phone is not None:
+    if is_send_phone is not None and str(is_send_phone) != "":
         if int(is_send_phone) == 1:
             # condition["replace_name__isnull"] = False
             condition["replace_name__gt"] = ''

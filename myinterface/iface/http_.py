@@ -11,6 +11,7 @@ import random
 from .models import BeforTest
 import datetime
 from .common_ import *
+import time
 
 
 class HttpEntiry:
@@ -18,6 +19,7 @@ class HttpEntiry:
     def __init__(self, test_result):
         self.test_result = test_result
         self.replace_data = ""
+        self.sleep_time = 0.5
 
     def run_test(self, is_save=True, itest=None):
         if not is_save:
@@ -34,7 +36,7 @@ class HttpEntiry:
             real_test = real_test_all
             self.init_replace_data(real_test)
             print(self.replace_data)
-            if self.replace_data == "":
+            if self.replace_data == "" and str(real_test.replace_name).strip() != "":
                 return {"msg": "异常，替换字符串为空"}
             header = HeaderManager.objects.filter(id=real_test.case_header_id)
             if len(header) > 0:
@@ -84,6 +86,7 @@ class HttpEntiry:
                 # print("data encode  %s" % real_post_data.encode('utf-8'))
                 http_enty = ""
                 # 0 get 1 post
+                time.sleep(self.sleep_time)
                 try:
                     if int(real_test.case_method) == HttpMethod.GET.value:
                         if str(real_data).strip() != "":
@@ -94,7 +97,6 @@ class HttpEntiry:
                     if int(real_test.case_method) == HttpMethod.POST.value:
                         http_enty = requests.post(url=real_url, data=real_post_data.encode('utf-8'), headers=dict_header)
 
-                    print(">>未设定内容，没有执行请求")
                 except Exception as e:
                     if not is_save:
                         return {"msg": "执行异常，%s" % e, "retcode": -1}
@@ -179,28 +181,33 @@ class HttpEntiry:
                 repalcer[0].replace_data = phone_all
                 self.replace_data = phone_all
                 repalcer[0].replace_update_time = datetime.datetime.now()
+                print(">>>更新号码 %s %s" % (phone_all, repalcer[0].replace_update_time))
                 repalcer[0].save()
 
             else:
                 current_time = datetime.datetime.now()
                 print("当前时间 %s" % current_time)
                 print("数据库字段时间 %s" % repalcer[0].replace_update_time)
-                if (current_time - repalcer[0].replace_update_time).seconds > 18000:
+                if (current_time - repalcer[0].replace_update_time).seconds > 86400:
                     phone_star = "171"
                     phone_random = random.randint(10000000, 99999999)
                     phone_all = phone_star + str(phone_random)
                     self.replace_data = phone_all
                     repalcer[0].replace_data = phone_all
                     repalcer[0].replace_update_time = datetime.datetime.now()
+                    print(">>>更新号码 %s %s" % (phone_all, repalcer[0].replace_update_time))
                     repalcer[0].save()
                 else:
                     # 如果小于2小时候的，直接读取替换表中数据
                     self.replace_data = repalcer[0].replace_data
+                    print(">>>拉取数据库号码 %s" % (repalcer[0].replace_data))
         else:
-            # 查询无数据时候，更新一条
-            phone_star = "171"
-            phone_random = random.randint(10000000, 99999999)
-            phone_all = phone_star + str(phone_random)
-            bt = BeforTest(replace_name="{{phone}}", replace_data=phone_all, replace_update_time=datetime.datetime.now())
-            self.replace_data = phone_all
-            bt.save()
+
+            print("没有查询到phone")
+            # # 查询无数据时候，更新一条
+            # phone_star = "171"
+            # phone_random = random.randint(10000000, 99999999)
+            # phone_all = phone_star + str(phone_random)
+            # bt = BeforTest(replace_name="{{phone}}", replace_data=phone_all, replace_update_time=datetime.datetime.now())
+            # self.replace_data = phone_all
+            # bt.save()

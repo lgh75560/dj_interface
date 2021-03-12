@@ -3,9 +3,14 @@
   <div>
     <div><h3>用例集--{{run_name}}, 第{{counter_id}}次数运行结果</h3> </div>
     <div id="chartColumn" style="width: 100%; height: 400px;"></div>
-
+    <el-row>
+       测试用例总数 {{total}} , 通过 {{pass}}, 失败{{fail}}
+    </el-row>
     <el-row>
       <el-table :data="test_result_lst" style="width: 100%" border :cell-style="green_padd_row">
+        <el-table-column prop="case_id" label="用例id" min-width="100">
+          <template slot-scope="scope"> {{ scope.row.case_id }} </template>
+        </el-table-column>
         <el-table-column prop="suit_name" label="业务名称" min-width="100">
           <template slot-scope="scope"> {{ scope.row.suit_name }} </template>
         </el-table-column>
@@ -21,10 +26,13 @@
         <el-table-column prop="result_match_type" label="结果匹配方式" min-width="100">
           <template slot-scope="scope"> {{ scope.row.result_match_type }} </template>
         </el-table-column>
+        <el-table-column prop="case_expected" label="预期结果" min-width="100">
+          <template slot-scope="scope"> {{ scope.row.case_expected }} </template>
+        </el-table-column>
         <el-table-column prop="result_response" label="response返回值" min-width="100">
           <template slot-scope="scope"> {{ scope.row.result_response }} </template>
         </el-table-column>
-        <el-table-column prop="result_pass" label="结果" min-width="100">
+        <el-table-column prop="result_pass" label="是否通过" min-width="100">
           <template slot-scope="scope"> {{ scope.row.result_pass }} </template>
         </el-table-column>
         <el-table-column prop="start_time" label="开始时间" min-width="100">
@@ -59,6 +67,9 @@
         run_id: 0,
         counter_id: 0,
         run_name: "",
+        total: "",
+        pass: "",
+        fail: "",
       }
     },
     mounted: function() {
@@ -88,27 +99,29 @@
         rowIndex,
         columnIndex
       }) {
+        var pass_col = 8
+        var request_time_col = 11
         // 通过的用例，绿色
-        if (row.result_pass === true && columnIndex === 6) {
+        if (row.result_pass === true && columnIndex === pass_col) {
           return {
             background: 'green',
             color: 'white'
           }
         }
          // 失败用例，标红
-        if (row.result_pass === false && columnIndex === 6) {
+        if (row.result_pass === false && columnIndex === pass_col) {
           return {
             background: 'red'
           }
         }
         // 大于3s的，标红
-        if (row.request_time > 3 && columnIndex === 9) {
+        if (row.request_time > 3 && columnIndex === request_time_col) {
           return {
             background: 'red',
             color: 'white'
           }
         }
-        if (row.request_time < 3 && columnIndex === 9) {
+        if (row.request_time < 3 && columnIndex === request_time_col) {
           return {
             background: 'green',
             color: 'white'
@@ -123,6 +136,9 @@
 
           this.chartColumn = echarts.init(document.getElementById('chartColumn'));
           this.run_name = response.data.run_name
+          this.total = response.data.toatal
+          this.pass = response.data.pass_count
+          this.fail = response.data.fail_count
           this.chartColumn.setOption({
             title: {
               text: '测试报告'

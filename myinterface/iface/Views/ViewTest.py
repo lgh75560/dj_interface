@@ -25,7 +25,7 @@ class TestManager:
             test_id = data.get('id', None)
             test_is_able = data.get('is_able', False)
             print(test_id)
-            test_is_able
+
             up_test = ITest.objects.filter(id=test_id)
             if len(up_test) > 0:
                 # print(up_test[0].to_dict())
@@ -38,6 +38,69 @@ class TestManager:
 
         else:
             return JsonResponse({"msg": "查询用例id为空，更新失败", "retcode": -1})
+
+    def update_one_test(self, request):
+        """全部信息更新"""
+        if request.method == 'POST':
+            data = json.loads(request.body)
+            test_id = data.get('id', None)
+            suit_id = data.get('suit_id', None)
+            test_name = data.get('case_name', None)
+            test_url = data.get('case_url', None)
+            test_method = data.get('case_method', None)
+            test_header = data.get('case_header_id', None)
+            test_json = data.get('case_json', None)
+            test_data = data.get('case_data', None)
+            test_source_address = data.get('source_address', None)
+            test_expected = data.get('case_expected', None)
+            test_match_type = data.get('result_match_type', None)
+            test_replace = data.get('replace_name', None)
+
+        else:
+            return JsonResponse({"msg": "不支持非post"})
+
+        target_test = ITest.objects.filter(id=test_id)
+        if len(target_test) > 0:
+
+            target_test[0].case_header_id = test_header
+            target_test[0].suit_id = suit_id
+            target_test[0].case_name = test_name
+            target_test[0].case_header_id = test_header
+            target_test[0].case_url = test_url
+            target_test[0].case_method = test_method
+            target_test[0].case_json = test_json
+            target_test[0].case_data = test_data
+            target_test[0].source_address = test_source_address
+            target_test[0].case_expected = test_expected
+            target_test[0].replace_name = test_replace
+            target_test[0].result_match_type = test_match_type
+
+            try:
+                target_test[0].save()
+            except Exception as e:
+                return JsonResponse({"msg": "异常%s" % e})
+            return JsonResponse({"msg": "保存成功", "retcode": 0})
+        else:
+            return JsonResponse({"msg": "有数据为空，请检查", "retcode": -1})
+
+    def get_test_by_id(self, request):
+        """通过id获取用例"""
+        if not request.body:
+            return JsonResponse({"msg": "请输入id"})
+        data = json.loads(request.body)
+        if "test_id" in data:
+            test_id = data.get('test_id', None)
+            print("查询的用例id %s" % test_id)
+        else:
+            return JsonResponse({"msg": "请输入id为空，查询失败"})
+        if str(test_id) == "":
+            return JsonResponse({"msg": "请输入id", "retcode": -1})
+
+        i_test = ITest.objects.filter(id=test_id)
+        if len(i_test) > 0:
+            return JsonResponse({"data": i_test[0].to_dict(), "retcode": 0})
+        else:
+            return JsonResponse({"msg": "查询结果为空，查询失败", "retcode": -1})
 
     def get_test_from_info(self, request):
         """查询用例"""

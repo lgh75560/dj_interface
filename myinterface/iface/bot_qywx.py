@@ -16,15 +16,17 @@ class QywxBot:
         "Content-Type": "application/json;charset=utf-8"
     }
 
-    def send_text(self, type_text, pass_count, fail_count, fail_list):
+    def send_text(self, type_text, pass_count, fail_count, fail_list, url):
 
+        """非测试企业微信组"""
         fail_str = ""
-        count = 0
+        count = 1
         for fail_name in fail_list:
             fail_str += "<font color=\"comment\">%s：%s</font> \n" % (count, fail_name)
             count += 1
 
-        out_str = "出错类型：%s。用例通过数%s；用例失败数<font color=\"warning\">%s</font>。失败用例列表：\n" % (type_text, pass_count, fail_count)
+        out_str = "出错类型：%s。用例通过数%s；用例失败数<font color=\"warning\">%s</font>。失败用例列表：\n >>[点击查看报告链接](%s)\n" % (
+        type_text, pass_count, fail_count, url)
         out_str += fail_str
 
         post_data = {
@@ -42,7 +44,7 @@ class QywxBot:
     def send_text_use_test_group(self, type_text, pass_count, fail_count, fail_list, url):
         """测试组机器人用的"""
         fail_str = ""
-        count = 0
+        count = 1
         for fail_name in fail_list:
             fail_str += "<font color=\"comment\">%s：%s</font> \n" % (count, fail_name)
             count += 1

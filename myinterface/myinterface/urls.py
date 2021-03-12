@@ -34,6 +34,8 @@ urlpatterns = [
 
     path('add_test/', views.go_add_test),
     path('get_test/', views.get_test_list),
+    path('get_test_by_id/', views.get_test_by_id),
+    path('update_one_test/', views.update_one_test),
     path('update_test/', views.update_test),
     path('get_test_info/', views.get_test_from_info),
     path('save_test/', views.save_test),

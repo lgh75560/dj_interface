@@ -10,6 +10,7 @@ import TestSuitRun from  '@/components/TestSuitRun'
 import TestList from  '@/components/TestManager'
 import TestSuitResultReport from  '@/components/TestSuitResultReport'
 import Timer_ from  '@/components/Timer_'
+import TestEdit from  '@/components/TestEdit.vue'
 
 const originalPush = Router.prototype.push
 
@@ -42,6 +43,11 @@ export default new Router({
           path: '/test',
           name: 'Test',
           component: TestAdd
+        },
+        {
+          path: '/test_edit',
+          name: 'TestEdit',
+          component: TestEdit
         },
         {
           path: '/test_suit',

@@ -1,5 +1,4 @@
-# -*- coding: utf-8 -*-
-# @Time    : 2021/3/5 11:19
+# -*- coding: utf-8 -*-z
 # @Author  : gh
 # @Software: PyCharm
 import json
@@ -7,14 +6,8 @@ from django.http import JsonResponse
 from apscheduler.schedulers.background import BackgroundScheduler
 from django_apscheduler.jobstores import DjangoJobStore, register_events, register_job
 from apscheduler.triggers.interval import IntervalTrigger
-import logging
-
+from ..Views import ViewCommon
 from ..Views import ViewRunResult
-scheduler = BackgroundScheduler()
-scheduler.add_jobstore(DjangoJobStore(), 'default')
-
-logging.basicConfig()
-logging.getLogger('apscheduler').setLevel(logging.DEBUG)
 
 
 class TimerView:
@@ -41,7 +34,7 @@ class TimerView:
                 if interval_seconds < 10:
                     interval_seconds = 10
                 # 2021年3月10日09:01:36，添加misfire_grace_time，防止job miss
-                job = scheduler.add_job(self.timming_run_result, trigger='interval', kwargs={"run_id": run_id}, seconds=interval_seconds, id=run_name, misfire_grace_time=3600)
+                job = ViewCommon.get_timer().add_job(self.timming_run_result, trigger='interval', kwargs={"run_id": run_id}, seconds=interval_seconds, id=run_name, misfire_grace_time=3600)
 
                 print(job.name)
                 return JsonResponse({"msg": "添加定时器成功 %s" % job.id, "retcode": 0})
@@ -58,7 +51,7 @@ class TimerView:
 
     def get_all_job(self):
         time_jobs = []
-        for j in scheduler.get_jobs():
+        for j in ViewCommon.get_timer().get_jobs():
             job_current = {}
             job_current['id'] = j.id
             job_current['kwargs'] = j.kwargs
@@ -92,11 +85,10 @@ class TimerView:
     def remove_job_by_id(self, job_id):
         """移除定时任务"""
         try:
-            target_job = scheduler.get_job(job_id=job_id)
+            target_job = ViewCommon.get_timer().get_job(job_id=job_id)
             target_job.remove()
             return JsonResponse({"msg": "移除job %s 成功" % job_id, "retcode": 0})
         except Exception as ee:
             return JsonResponse({"msg": "移除job %s 异常 %s" % (job_id, ee), "retcode": -1})
 
-scheduler.start()
 
